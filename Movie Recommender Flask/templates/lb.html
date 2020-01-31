@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+  <body>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+    $(document).on('change', '.div-toggle', function() {
+  var target = $(this).data('target');
+  var show = $("option:selected", this).data('show');
+  $(target).children().addClass('hide');
+  $(show).removeClass('hide');
+  });
+  $(document).ready(function(){
+  	$('.div-toggle').trigger('change');
+  });
+  </script>
+      <select class="div-toggle" data-target=".my-info-1"
+      placeholder="Order by" name = "Order by">
+        <option value="number" data-show=".number">Number of ratings</option>
+        <option value="best" data-show=".best">Rating</option>
+
+      </select>
+
+      <div class="my-info-1">
+        <div class="number hide">
+          <br>
+          <h4> Movies ordered by number of ratings </h4>
+          <br><br>
+          <ul>
+            {% for i in movieN %}
+            <li>
+              {{ i }}
+            </li>
+            {% endfor %}
+
+
+        </div>
+        <div class="best hide">
+          <br>
+          <h4> Movies ordered by ratings </h4>
+          <br><br>
+          <ul>
+            {% for i in movieB %}
+            <li>
+              {{ i }}
+            </li>
+            {% endfor %}
+      </div>
+</body>
+
+</html>

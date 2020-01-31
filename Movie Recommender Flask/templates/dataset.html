@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>
+   <a href="/lb" style="float:right;text-align:right;margin-left: 80px;">Leaderboards</a>
+    </h3>
+    <form action="{{url_for('recommend')}}" method="get">
+      <label for="movies">What are your 3 favourite movies?</label>
+        <br>
+        <br>
+        <input type="text" id="movie1" name="movie1" list="movie-list1">
+        <datalist id="movie-list1">
+          {% for i in result_html %}
+          <option> {{ i }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <br>
+        <input type="text" id="movie2" name="movie2" list="movie-list2">
+        <datalist id="movie-list2">
+          {% for i in result_html %}
+          <option> {{ i }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <br>
+        <input type="text" id="movie3" name="movie3" list="movie-list3">
+        <datalist id="movie-list3">
+          {% for i in result_html %}
+          <option> {{ i }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <br>
+        <br>
+        <br>
+      <label for="movies">What are your 3 least favourite movies?</label>
+        <br>
+        <br>
+        <input type="text" id="movie4" name="movie4" list="movie-list4">
+        <datalist id="movie-list4">
+          {% for i in result_html %}
+          <option> {{ i }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <br>
+        <input type="text" id="movie5" name="movie5" list="movie-list5">
+        <datalist id="movie-list5">
+          {% for i in result_html %}
+          <option> {{ i }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <br>
+        <input type="text" id="movie6" name="movie6" list="movie-list6">
+        <datalist id="movie-list6">
+          {% for i in result_html %}
+          <option> {{ i }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <br>
+      <label for="rec">How many recommendations? </label>
+      <input type="text" name="num">
+      <br>
+      <br>
+      <br>
+      <input type="Submit" action="/recommendation" method="get">
+    </form>
+  </body>
+</html>

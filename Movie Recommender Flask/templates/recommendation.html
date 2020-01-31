@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Here are your {{ num }} recommended movies!</h1>
+    <ul>
+        <!-- <li>{{ result_html[0] }}</li>
+        <li>{{ result_html[1] }}</li>
+        <li>{{ result_html[2] }}</li> -->
+
+        {% for i in result_html %}
+        <li>
+        <form action="{{url_for('info')}}" method="get">
+        {{ i }}
+        <input type="hidden" name="movieinfo" value= "{{ i }}">
+        <input type="Submit" id="movieinfo" name = "movieinfo" value="Infos">
+        </form>
+        </li>
+        {% endfor %}
+
+    </ul>
+    <br>
+    <br>
+    <h1>You are particularly into the following genres:</h1>
+    <ul>
+
+        {% for i in top %}
+        <li> {{ i }} </li>
+        {% endfor %}
+
+    </ul>
+    <br>
+    <h1>You don't dig these ones though, you bad boy:</h1>
+    <ul>
+
+        {% for i in bottom %}
+        <li> {{ i }} </li>
+        {% endfor %}
+
+    </ul>
+    <br>
+    <a href='/'>Go back to home page.</a>
+
+  </body>
+</html>

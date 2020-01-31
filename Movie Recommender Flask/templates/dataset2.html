@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="{{url_for('info')}}" method="get">
+      <label for="moviesinfo">Which movie would you like info on?</label>
+        <br>
+        <br>
+        <input type="text" id="movieinfo" name="movieinfo" list="movie-list">
+        <datalist id="movie-list">
+          {% for j in result_html1 %}
+          <option> {{ j }} </option>
+          {% endfor %}
+        </datalist>
+        <br>
+        <input type="Submit">
+
+      </form>
+  </body>
+</html>

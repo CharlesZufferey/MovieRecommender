@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Informations about {{movie}}</h1>
+    <br>
+    <br>
+    <p>Genres: {{ moviegenre }}</p>
+    <br>
+    <p>Count of ratings: {{countrating}}</p>
+    <br>
+    <p>Average rating of users: {{avgrating}} / 5</p>
+    <br><br>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+  </body>
+</html>
