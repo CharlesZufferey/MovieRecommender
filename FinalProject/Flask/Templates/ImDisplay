@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1> Images </h1>
+    <div>
+
+      {% for i in img %}
+
+      <div>
+      <img src="/static/images/{{i[0]}}" style= "width:300px;height:300px;" alt="{{j}}" >
+      Type : {{i[1]}}
+
+      </div>
+      {% endfor %}
+
+    </div>
+  </body >
+</html>

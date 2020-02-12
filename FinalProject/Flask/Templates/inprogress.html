@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="background-color:#f5f5dc;">
+  <body>
+
+  <br>
+  <br>
+  {% if nb == 0 %}
+  <h3>No image has been yet downloaded, please refresh</h3>
+  {% elif nb == 1 %}
+  <h3>1 image has been downloaded</h3>
+  {% else %}
+  <h3>Currently, {{nb}} images have been downloaded!</h3>
+  {% endif %}
+  <br>
+  <br>
+  <br>
+  <br>
+  <form action="{{url_for('Status')}}" method="get">
+
+  <input type="Submit" action="/Status" method="get" value="Refresh">
+  </form>
+  <form action="{{url_for('imdisplay')}}" method="get">
+
+  <input type="Submit" action="/imdisplay" method="get" value="Get Predictions">
+  </form>
+  </body>
+</html>

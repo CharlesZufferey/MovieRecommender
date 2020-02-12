@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+.wrapper {
+        text-align: center;
+    }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column {
+  flex: 50%;
+  padding: 0 4px;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+figure.goodcolor {
+    display: inline-block;
+    border: 1px dotted gray;
+    margin: 20px; /* adjust as needed */
+}
+figure img {
+    vertical-align: top;
+}
+figure figcaption {
+    border: 1px dotted blue;
+    text-align: center;
+}
+
+figure.wrongcolor {
+    display: inline-block;
+    border: 1px dotted red;
+    margin: 30px; /* adjust as needed */
+    opacity: 0.6;
+    filter: alpha(opacity=60)
+}
+figure img {
+    vertical-align: top;
+}
+figure figcaption {
+    border: 1px dotted blue;
+    text-align: center;
+}
+
+
+</style>
+
+  </head>
+  <body style="background-color:#f5f5dc;">
+  <body>
+
+    <h1 align="center"> Images scraped</h1>
+    <form action="{{url_for('imfiltered')}}" method="get">
+    <input class="wrapper"  type="Submit" action="/imagesfiltered" method="get" value="Check for reshooting">
+    </form>
+    <div class="row">
+      <div class="column">
+
+      {% for i in img %}
+        {% if i[2] == 0 %}
+        <figure class = "wrongcolor">
+        <img src="/static/images/{{i[0]}}" style= "width:250px;height:250px;" alt="{{j}}" >
+        <figcaption>{{i[1]}}</figcaption>
+        </figure>
+
+        {% else %}
+
+        <figure class = "goodcolor">
+        <img src="/static/images/{{i[0]}}" style= "width:250px;height:250px;" alt="{{j}}" >
+        <figcaption>{{i[1]}} </figcaption>
+        </figure>
+
+        {% endif %}
+
+
+
+      {% endfor %}
+      </div>
+    </div>
+  </body >
+</html>
