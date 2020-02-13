@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <style>
-.wrapper {
-        text-align: center;
-    }
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -40,13 +38,7 @@ figure.wrongcolor {
     opacity: 0.6;
     filter: alpha(opacity=60)
 }
-figure img {
-    vertical-align: top;
-}
-figure figcaption {
-    border: 1px dotted blue;
-    text-align: center;
-}
+
 
 
 </style>
@@ -57,7 +49,7 @@ figure figcaption {
 
     <h1 align="center"> Images scraped</h1>
     <form action="{{url_for('imfiltered')}}" method="get">
-    <input class="wrapper"  type="Submit" action="/imagesfiltered" method="get" value="Check for reshooting">
+    <input style="margin-left:553px";  type="Submit" action="/imagesfiltered" method="get" value="Check for reshooting">
     </form>
     <div class="row">
       <div class="column">
